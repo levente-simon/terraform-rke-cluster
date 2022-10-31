@@ -15,7 +15,7 @@ variable "module_depends_on" {
 resource "rke_cluster" "mgmt_cluster" {
   depends_on = [ var.module_depends_on ]
 
-  cluster_name = "rancher-management"
+  cluster_name = var.cluster_name
 
   dynamic "nodes" {
     for_each  = var.cluster_hosts
